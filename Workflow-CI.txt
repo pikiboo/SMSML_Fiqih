@@ -1,1 +1,1 @@
-https://github.com/pikidisini/Eksperimen_SML_Fiqih/tree/main/SMSML_Fiqih/Workflow-CI
+https://github.com/pikiboo/SMSML_Fiqih/tree/main/Workflow-CI/MLProject
