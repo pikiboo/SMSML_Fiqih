@@ -3,7 +3,7 @@ name: MLflow CI Training
 on:
   push:
     paths:
-      - 'MLProject/**'
+      - 'Workflow-CI/MLProject/**'
   workflow_dispatch:
 
 jobs:
@@ -17,16 +17,14 @@ jobs:
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v2
         with:
-          activate-environment: msml
           environment-file: Workflow-CI/MLProject/conda.yaml
+          activate-environment: smsml_env
           auto-activate-base: false
 
-      - name: Install MLflow
-        run: |
-          conda install -c conda-forge mlflow
-
       - name: Run MLflow Project Training
+        shell: bash -l {0}
         run: |
+          conda activate smsml_env
           cd Workflow-CI/MLProject
           mlflow run . --entry-point main
 
@@ -49,7 +47,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image from MLflow Model
+        shell: bash -l {0}
         run: |
+          conda activate smsml_env
           mlflow models build-docker -m mlruns/0/${{ steps.get_run.outputs.run_id }}/artifacts/model -n fiqih-mlflow-model
 
       - name: Push Docker Image
