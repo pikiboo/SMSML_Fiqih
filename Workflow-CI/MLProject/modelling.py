@@ -20,7 +20,7 @@ parser.add_argument("--l1_ratio", type=float, default=0.01)
 args = parser.parse_args()
 
 # 2. Load data
-df = pd.read_csv("SMSML_Fiqih/Workflow-CI/MLProject/nasa_preprocessing/clean/train_FD001_clean.csv")
+df = pd.read_csv("Workflow-CI/MLProject/nasa_preprocessing/clean/train_FD001_clean.csv")
 
 # 3. Feature engineering
 max_cycle_per_unit = df.groupby("unit")["time_in_cycles"].transform("max")
