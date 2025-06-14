@@ -27,7 +27,7 @@ jobs:
 
       - name: Run MLflow Project Training
         run: |
-          cd MLProject
+          cd Workflow-CI/MLProject
           mlflow run . --entry-point main
 
       - name: Find latest run ID
