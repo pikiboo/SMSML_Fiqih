@@ -37,7 +37,7 @@ jobs:
           echo "run_id=$RUN_ID" >> $GITHUB_OUTPUT
 
       - name: Upload model artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: mlflow-model
           path: mlruns/0/${{ steps.get_run.outputs.run_id }}/artifacts/model

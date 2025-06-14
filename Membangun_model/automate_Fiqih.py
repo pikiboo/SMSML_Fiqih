@@ -48,8 +48,8 @@ def main():
     print("⏳ Memuat dan memproses data FD001...")
 
     # Sesuaikan path data mentah dan path simpan
-    raw_path = "SMSML_Fiqih/Membangun_model/nasa_preprocessing/raw/train_FD001.txt"
-    save_path = "SMSML_Fiqih/Membangun_model/nasa_preprocessing/clean/train_FD001_clean.csv"
+    raw_path = "Membangun_model/nasa_preprocessing/raw/train_FD001.txt"
+    save_path = "Membangun_model/nasa_preprocessing/clean/train_FD001_clean.csv"
     
     # 1. Load
     df = load_raw_data(raw_path)
